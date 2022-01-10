@@ -13,11 +13,10 @@ function getUserTheme(userId) {
     return knex("user_theme").where("user_id",userId).select()
 }
 
-function updateUserTheme(userId,userTheme) {
+function updateUserTheme(userId,themeId) {
     console.log("userId",userId)
-    console.log("userTheme",userTheme)
 
-    return knex("user_theme").where("user_id",userId).update(userTheme)
+    return knex("user_theme").where("user_id",userId).update("theme_id",themeId)
 }
 
 module.exports = {
